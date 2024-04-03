@@ -26,6 +26,12 @@ def Blackjack():
                 print("Dealer wins!")
                 input("press enter to return.")
                 return
+            elif dealer_score > 21:
+                print(f"Dealer has {dealer_hand}, for a score of {dealer_score}")
+                print("Dealer busts! You win!")
+                input("press enter to return.")
+                return
+
 
         if player_score >= dealer_score:
             print(f"Dealer has {dealer_hand}, for a score of {dealer_score}")
@@ -44,7 +50,7 @@ def Blackjack():
         for card in hand:
             rank = card[:-1]
             if rank in "KQJ":
-                card_pnt = 11
+                card_pnt = 10
             elif rank == "A":
                 if current_score >= 11:
                     card_pnt = 1
